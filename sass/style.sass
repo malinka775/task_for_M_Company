@@ -1,0 +1,491 @@
+$bg_secondary: #F3F4F6
+$bg_primary: #FFFFFF
+$bg_lightblue: #EDF0FA
+$success: #47C293
+$attention: #FF6633
+$caution: #E74C3C
+$icon_border: #DFE4F5
+$header_boxshadow: rgba(55, 74, 119, 0.1)
+$linear: linear-gradient(174.51deg, #445E9A 0%, #2C3C63 100%)
+$text_secondary: #6D7A8F
+$text_header: #052A34
+$text_body: #313A3E
+$navbar_divider: rgba(167, 192, 248, 0.2)
+
+*
+    box-sizing: border-box
+    font-family: 'Roboto', sans-serif
+    margin: 0
+
+a
+    text-decoration: none
+
+.container
+    margin: 0 auto
+    background-color: $bg_secondary
+    height: 1528px
+    width: 1920px
+    display: grid
+    grid-template-rows: 64px 1fr
+    grid-template-columns: 238px 1fr
+    grid-template-areas: "said header" "said main" "said main"
+
+    
+
+.sidebar
+    position: relative
+    grid-area: said
+    height: 100%
+    background: $linear
+
+.logo
+    margin-bottom: 32px
+
+.navbar
+    &__row
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        padding: 12px 0
+        &__icon
+            width: 40px
+            height: 40px
+            margin-right: 12px 
+            border-radius: 6px
+            overflow: hidden
+        &__title
+            width: 130px
+            color: white
+            font-size: 16px
+            font-family: 'Roboto Condensed', sans-serif
+    &__item 
+        padding: 8px 16px
+        border-top: 1px solid $navbar_divider
+        &:first-child
+            padding-top: 16px
+            border-top: none
+        &:last-child
+            height: 100%
+
+        
+            
+
+    
+
+
+      
+.dropdown
+    display: flex
+    width: 154px
+    justify-content: space-between
+    align-items: center
+    &__city
+        width: 130px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        display: inline-block
+        font-family: 'Roboto Condensed', sans-serif
+    &__btn
+        height: 100%
+        img
+            vertical-align: middle
+
+.fold-btn
+    position: absolute
+    bottom: 20px
+    padding: 0
+
+.content
+    width: 100%
+
+.header
+    grid-area: header
+    padding: 12px 32px
+    height: 64px
+    display: flex
+    background-color: $bg_primary
+    box-shadow: 0px 2px 8px $header_boxshadow
+    width: 100%
+    &__flex-wrapper
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__navbar__row
+        width: 88px
+        padding: 0
+        &__icon
+            width: 16px
+            height: 16px
+            margin: 0
+            overflow: inherit
+                
+        &__title
+            font-size: 16px
+            font-weight: 500px
+            color: $text_header
+            padding-left: 20px
+    .header__icons
+        display: flex
+        width: 104px
+        justify-content: space-between
+        .icon-round
+            position: relative
+            width: 40px
+            height: 40px
+            background-color: $bg_lightblue
+            border-radius: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            &:hover
+                cursor: pointer
+            .news
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-45%, -50%)
+                font-family: Roboto Condensed
+                font-weight: normal
+                font-size: 12px
+                color: $bg_primary
+
+            
+            .notification
+                position: absolute
+                width: 12px
+                height: 12px
+                background-color: $caution
+                border: 1px solid $bg_primary
+                border-radius: 100%
+                top: 0px
+                right: 0px
+
+.main
+    grid-area: main
+    display: grid
+    grid-template-rows: 75px 669px  669px
+    grid-template-columns: 1218px  1fr
+    grid-template-areas: "h h " " goal  status" "goal status"
+    background: $bg_secondary
+    height: 100%
+    padding: 0px 25px 3px
+    h1
+        grid-area: h
+        font-family: Roboto
+        font-size: 26px
+        line-height: 75px
+        color: $text_header
+    .goals
+        grid-area: goal
+        height: 100%
+        background-color: $bg_secondary
+        
+    .goal
+        margin-bottom: 24px
+        display: flex
+        justify-content: space-between
+        background: $bg_primary
+        border-radius: 4px
+        padding: 24px 24px 32px 52px
+
+
+        &__info
+            height: 100%
+
+        &__descr
+            height: 186px
+            width: 680px
+            border: 1px solid $icon_border
+            border-radius: 4px
+            padding: 16px 21px 16px 16px
+        &__number
+            height: 42px
+            width: 114px
+            background: $icon_border
+            border-radius: 4px
+            text-align: center
+            line-height: 42px
+            
+        &__header
+            display: flex
+            justify-content: space-between
+
+        &__edit
+            display: flex
+            justify-content: space-between
+            width: 64px
+            &__icon
+                img:hover
+                    cursor: pointer
+        &__text
+            margin-top: 8px
+            .bold-roboto
+                margin-top: 5px
+
+        &__criteria
+            padding: 25px 16px
+            &__title
+                position: relative
+                color: $text_secondary
+                font-size: 16px
+                font-family: Roboto
+                display: flex
+                align-items: center
+                justify-content: space-between
+                width: 234px
+            
+            &__hint
+                position: absolute
+                padding: 8px
+                width: 382px
+                font-weight: normal
+                font-size: 16px
+                line-height: 130%
+                color: $text_body
+                background: $bg_primary
+                box-shadow: 0px 2px 8px $header_boxshadow
+                border-radius: 4px
+                top: 30px
+                left: 236px
+            &__svg:hover
+                cursor: pointer
+
+            &__current
+                margin-top: 16px
+                display: flex
+                img
+                    margin-left: 13px
+            
+
+        &__steps
+            list-style-type: none
+            padding-left: 23px
+            .big
+                font-size: 16px
+
+            li
+                margin-top: 8px
+                font-size: 14px
+            .green
+                position: relative
+                &::before
+                    content: url(icons/check-green.svg)
+                    width: 15px
+                    height: 15px
+                    position: absolute
+                    left: -24px
+
+            .grey
+                position: relative
+                &::before
+                    content: url(./icons/check-grey.svg)
+                    width: 15px
+                    height: 15px
+                    position: absolute
+                    left: -24px
+                
+.bold-roboto
+    font-family: Roboto
+    font-weight: bold
+    font-size: 20px
+    color: $text_body
+.field
+    font-weight: normal
+    font-size: 14px
+    color: $text_secondary
+
+.flag 
+    position: absolute
+    display: block
+    left: 50%
+    opacity: 0
+    z-index: 2
+.picture
+    width: 515px
+    &__wrapper
+        width: fit-content
+        margin: 0 auto
+        position: relative
+
+        > div
+            position: relative
+        .path
+            height: 517px
+            width: 5px
+            position: absolute
+            bottom: 6px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: $bg_primary
+            &__progress
+                background-color: $success
+                height: 0px
+            &__steps
+                position: absolute
+                top: 95px
+                bottom: 25px
+                left: 50%
+                min-width: 100%
+                transform: translateX(-49%)
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                align-items: center
+            &__step
+                display: flex
+                min-width: fit-content
+                align-items: center
+                
+                
+                &_odd
+                    position: relative
+                    transform: translateX(47%)
+               
+                &_even
+                    flex-direction: row-reverse
+                    position: relative
+                    transform: translateX(-51%)
+   
+
+.branch
+    height: 5px
+    width: 30px
+    background-color: $bg_primary
+    
+    &__goal
+        padding: 7px 16px
+        background: $bg_primary
+        box-shadow: 0px 4px 20px $header_boxshadow
+        border-radius: 100px
+        display: flex
+        align-items: center
+         
+        &__name
+            font-family: Roboto
+            font-size: 14px
+            line-height: 18px
+            flex: 1 0 0
+            min-width: fit-content
+
+.current
+    &.path__step_odd
+        .branch 
+            &:before 
+                content: url(/icons/pointer_right.svg)
+                position: absolute
+                width: 10px
+                height: 23px
+                top: 50%
+                transform: translateY(-60%)
+                left: 14px   
+                z-index: 1
+    &.path__step_even
+        .branch 
+            &:before 
+                content: url(/icons/pointer_left.svg)
+                position: absolute
+                width: 10px
+                height: 23px
+                top: 50%
+                transform: translateY(-60%)
+                right: 21px
+                z-index: 1
+    .branch__goal
+        padding: 7px 16px 7px 46px
+        position: relative
+        &::before
+            content: url("/icons/flag-small.svg")
+            width: 15px
+            height: 18px
+            position: absolute
+            left: 13px
+            top: 4px
+    
+      
+.achieved
+    div
+        background-color: $success
+    .branch__goal
+        padding: 7px 16px 7px 46px
+        position: relative
+        &__name 
+            
+            &::before
+                content: url("/icons/check-green-on-white.svg")
+                width: 20px
+                height: 20px
+                position: absolute
+                left: 13px
+                top: 6px
+
+
+.status 
+    grid-area: status
+    background-color: $bg_secondary
+    padding-left: 24px
+    &__wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        padding: 20px 24px
+        background: $bg_primary
+        border-radius: 4px
+    &__header
+       color: $text_secondary
+       font-weight: normal
+        font-size: 16px
+            
+    &__row 
+        margin-bottom: 16px
+        &:last-child
+            margin-bottom: 0
+.btn
+    width: 100%
+    .btn_add
+        background: $attention
+        border: none
+        border-radius: 4px
+        height: 40px
+        width: 100%
+        font-weight: 500
+        font-size: 16px
+        text-align: center
+        color: $bg_primary
+        &:hover
+            cursor: pointer
+
+.hidden
+    visibility: hidden
+        
+
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+    
+        
+
+    
+    
+
+
+
+
+    
+
+
+            
+                
+    
